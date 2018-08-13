@@ -26,7 +26,10 @@ public class UserResource {
     //retrieve a single user using user id
     @GetMapping(path = "/users/{id}")
     public User fetchUser(@PathVariable int id){
-        return service.findUser(id);
+        User user = service.findUser(id);
+        if (user == null)
+            throw new UserNotFoundException("id-" + id);
+        return user;
     }
 
     //creating a new user
