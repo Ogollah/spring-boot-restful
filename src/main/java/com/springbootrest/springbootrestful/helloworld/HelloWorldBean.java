@@ -1,4 +1,4 @@
-package com.springbootrest.springbootrestful;
+package com.springbootrest.springbootrestful.helloworld;
 
 public class HelloWorldBean {
 
