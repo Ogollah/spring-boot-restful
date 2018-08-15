@@ -1,11 +1,16 @@
 package com.springbootrest.springbootrestful.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
+
+//static filtering fields
+@JsonIgnoreProperties(value = {"birthDate"})
+
 
 @ApiModel(description = "Details about the user")
 public class User {
