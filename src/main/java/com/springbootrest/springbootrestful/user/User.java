@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 
 //static filtering fields
-@JsonIgnoreProperties(value = {"birthDate"})
+//@JsonIgnoreProperties(value = {"birthDate"})
 
 
 @ApiModel(description = "Details about the user")
