@@ -1,5 +1,6 @@
 package com.springbootrest.springbootrestful.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -34,6 +35,7 @@ public class User {
     private Date birthDate;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Post>posts;
 
     protected User(){
