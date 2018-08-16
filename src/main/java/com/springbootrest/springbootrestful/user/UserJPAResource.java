@@ -89,4 +89,15 @@ public class UserJPAResource {
 
         return ResponseEntity.created(location).build();
     }
+    //delete a post
+    @DeleteMapping(path = "/jpa/users/{id}/posts/{postId}")
+    public void deleteAPost(@PathVariable("id") int id, @PathVariable("postId") int postId){
+        Optional<User>userOptional = userRepository.findById(id);
+        if (!userOptional.isPresent()){
+            throw new UserNotFoundException("id-"+id);
+        }
+        User user = userOptional.get();
+        user.setId(id);
+        postRepository.deleteById(postId);
+    }
 }
