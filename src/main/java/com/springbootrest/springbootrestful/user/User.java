@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -13,7 +16,11 @@ import java.util.Date;
 
 
 @ApiModel(description = "Details about the user")
+@Entity
 public class User {
+
+    @Id
+    @GeneratedValue
     private Integer id;
 
     @Size(min = 2, message = " Name should have atleast 2 characters")
